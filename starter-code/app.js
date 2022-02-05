@@ -12,12 +12,6 @@
     }
     mobileToggle()
     let destLinks = document.querySelectorAll(".main .dest-click")
-    /*
-    setInterval((value) => {
-        value = document.querySelectorAll(".main .dest-click")
-        console.log(value)
-    }, 1000);
-    */
    const switchPlanets = () =>{
        const sectionList = document.querySelectorAll(".main")
        destLinks.forEach(element => {
