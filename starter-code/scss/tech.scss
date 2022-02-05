@@ -1,0 +1,63 @@
+@use "partials/default" as *;
+@use "partials/mixins" as *;
+@use "partials/functions" as *;
+@use "partials/variables" as *;
+
+body{
+    background-image: url(../assets/technology/background-technology-mobile.jpg);
+    @media only screen and (min-width: 400px) {
+        background-image: url(../assets/technology/background-technology-tablet.jpg);
+    }
+    @media only screen and (min-width: 800px) {
+        background-image: url(../assets/technology/background-technology-desktop.jpg);
+    }
+    position: relative;
+}
+picture{
+    @media only screen and (max-width: 800px){
+        order: -1;
+    }
+    source{
+        position: absolute;
+        left: 0%;
+    }
+}
+.circle{
+    @include circle;
+    gap: 1em;
+    width: 80px;
+    height: 80px;
+    button{
+        font-size: 1.2em;
+    }
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    &:hover{
+        background-color: white;
+        color: $base-color;
+    }
+}
+.circle-link{
+    @include flex-align($flex-dir: column, $align-itm: flex-start, $jst-cnt: space-between);
+    gap: 2em;
+    
+    @media only screen and (max-width: 800px){
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.main__article{
+    max-width: 500px;
+    margin-inline: auto;
+    @include flex-align($jst-cnt: space-between);
+    @media only screen and (max-width: 800px){
+        flex-direction: column;
+    }
+    gap: 3em;
+}
+.soft-hd{
+    max-width: auto;
+    margin-inline: 0;
+    padding: 1em;
+}

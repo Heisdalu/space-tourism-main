@@ -1,0 +1,42 @@
+@use "functions" as f;
+@use "variables" as var;
+
+@mixin google-font($font){
+    $font: unquote($font);
+    @import url(http://fonts.googleapis.com/css?family=#{$font});
+}
+@mixin bg-default{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@mixin double-grid{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    @media only screen and (min-width: 800px){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+    }
+}
+@mixin bd-radius($radius){
+    border-radius: $radius;
+}
+@mixin circle{
+    width: f.em(70px);
+    height: f.em(70px);
+    background-color: white;
+    @include bd-radius(50%);
+    color: var.$base-color;
+    @include flex-align;
+}
+@mixin flex-align($flex-dir: row, $align-itm: center, $jst-cnt: center){
+    display: flex;
+    align-items: $align-itm;
+    justify-content: $jst-cnt;
+    flex-direction: $flex-dir;
+}
+@mixin hover-state{
+    &:hover{
+        border-bottom: 2px solid white;
+    }
+}

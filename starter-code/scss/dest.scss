@@ -1,0 +1,40 @@
+@use "partials/default" as *;
+@use "partials/mixins" as *;
+@use "partials/functions" as *;
+@use "partials/variables" as *;
+body{
+    background-image: url(../assets/destination/background-destination-mobile.jpg);
+    @media only screen and (min-width: 400px) {
+        background-image: url(../assets/destination/background-destination-tablet.jpg);
+    }
+    @media only screen and (min-width: 800px) {
+        background-image: url(../assets/destination/background-destination-desktop.jpg);
+    }
+}
+.dest-link{
+    @include flex-align($jst-cnt: flex-start, $align-itm: flex-start);
+
+    * ~ *{
+        margin-left: 2em;
+    }
+    @media only screen and (max-width: 800px){
+        justify-content: center;
+    }
+}
+.dist-param{
+    @include flex-align($jst-cnt: flex-start);
+    border-top: 1px solid white;
+    margin-top: 1em;
+    gap: 1em;
+    span{
+        font-size: .7em;
+        font-weight: 200;
+        display: block;
+        text-align: left;
+    }
+    > * + *{
+        margin-left: 1em;
+    }
+
+
+}
