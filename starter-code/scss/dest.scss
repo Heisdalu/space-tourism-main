@@ -11,6 +11,12 @@ body{
         background-image: url(../assets/destination/background-destination-desktop.jpg);
     }
 }
+.main{
+    display: none;
+}
+.show-main{
+    @include double-grid;
+}
 .dest-link{
     @include flex-align($jst-cnt: flex-start, $align-itm: flex-start);
 
@@ -26,7 +32,7 @@ body{
     border-top: 1px solid white;
     margin-top: 1em;
     gap: 1em;
-    span{
+    span:first-of-type{
         font-size: .7em;
         font-weight: 200;
         display: block;

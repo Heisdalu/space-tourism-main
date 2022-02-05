@@ -190,7 +190,7 @@ button {
   display: grid;
   grid-template-rows: auto 1fr;
   place-items: center;
-  height: 100%;
+  min-height: 100vh;
   gap: 4em;
 }
 @media only screen and (min-width: 800px) {
@@ -259,6 +259,21 @@ body {
   }
 }
 
+.main {
+  display: none;
+}
+
+.show-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+@media only screen and (min-width: 800px) {
+  .show-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+}
+
 .dest-link {
   display: flex;
   align-items: flex-start;
@@ -283,7 +298,7 @@ body {
   margin-top: 1em;
   gap: 1em;
 }
-.dist-param span {
+.dist-param span:first-of-type {
   font-size: 0.7em;
   font-weight: 200;
   display: block;

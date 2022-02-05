@@ -161,7 +161,7 @@ button{
 .main{
     @include double-grid;
     place-items: center;
-    height: 100%;
+    min-height: 100vh;
     gap: 4em;
 }
 .main__article{
