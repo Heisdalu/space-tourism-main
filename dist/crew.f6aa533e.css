@@ -113,7 +113,7 @@ button {
     content: "";
     position: absolute;
     width: 70%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     top: 50%;
     left: 10%;
   }
@@ -125,13 +125,35 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  background-color: rgba(122, 121, 121, 0.295);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 1em;
-  backdrop-filter: blur(10px);
   gap: 0.8em;
+  position: relative;
+}
+@support (backdrop-filter: blur(10px)) {
+  .hd__nav__ul {
+    backdrop-filter: blur(10px);
+    background-color: rgba(122, 121, 121, 0.9);
+  }
 }
 .hd__nav__ul > * ~ * {
   margin-left: 0.8em;
+}
+.hd__nav__ul::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(600px);
+}
+@supports (backdrop-filter: blur(10px)) {
+  .hd__nav__ul {
+    backdrop-filter: blur(10px);
+    background-color: rgba(122, 121, 121, 0.9);
+  }
 }
 @media only screen and (max-width: 800px) {
   .hd__nav__ul {
@@ -149,6 +171,7 @@ button {
     color: #0c0e18;
     font-size: 1.2em;
     font-weight: 600;
+    color: white;
   }
   .hd__nav__ul li {
     margin-left: 0;
@@ -190,7 +213,7 @@ button {
   display: grid;
   grid-template-rows: auto 1fr;
   place-items: center;
-  minheight: 100%;
+  min-height: 100vh;
   gap: 4em;
 }
 @media only screen and (min-width: 800px) {
@@ -256,6 +279,21 @@ body {
 @media only screen and (min-width: 800px) {
   body {
     background-image: url(/background-crew-desktop.c3d57d2c.jpg);
+  }
+}
+
+.main {
+  display: none;
+}
+
+.show-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+@media only screen and (min-width: 800px) {
+  .show-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
   }
 }
 

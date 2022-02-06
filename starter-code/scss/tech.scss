@@ -22,14 +22,18 @@ picture{
         left: 0%;
     }
 }
-.circle{
+.main{
+    display: none;
+}
+.show-main{
+    @include double-grid;
+}
+.circle button{
     @include circle;
     gap: 1em;
     width: 80px;
     height: 80px;
-    button{
-        font-size: 1.2em;
-    }
+    font-size: 1.2em;
     background-color: transparent;
     border: 1px solid white;
     color: white;

@@ -15,7 +15,7 @@
   <header class="hd">
     <nav class="hd__nav">
       <div class="logo-container">
-        <figure class="hd__ logo">
+        <figure class="hd__logo">
           <img src="assets/shared/logo.svg" alt="">
         </figure>
         <figure class="hamburger">
@@ -32,12 +32,12 @@
     <section class="mrg-top">
       <h3 class="soft-hd"><span>03 </span>Space launch 101</h3>
       <section>
-        <section class="main">
+        <section id="vehicle" class="main show-main">
           <article class="main__article">
             <ul class="dest-link circle-link">
-              <li class="dest__link__elem circle"><button>1</button></li>
-              <li class="dest__link__elem circle"><button>2</button></li>
-              <li class="dest__link__elem circle"><button>3</button></li>
+              <li class="dest__link__elem circle"><button data-id="vehicle">1</button></li>
+              <li class="dest__link__elem circle"><button data-id="capsule">2</button></li>
+              <li class="dest__link__elem circle"><button data-id="port">3</button></li>
             </ul>
             <div class="main__article-div">
               <h4>The terminology</h4>
@@ -54,6 +54,53 @@
             <img src="assets/technology/image-launch-vehicle-landscape.jpg" alt="">
           </picture>
         </section>
+        <!-- ======== -->
+        <section id="capsule" class="main">
+          <article class="main__article">
+            <ul class="dest-link circle-link">
+              <li class="dest__link__elem circle"><button data-id="vehicle">1</button></li>
+              <li class="dest__link__elem circle"><button data-id="capsule">2</button></li>
+              <li class="dest__link__elem circle"><button data-id="port">3</button></li>
+            </ul>
+            <div class="main__article-div">
+              <h4>The terminology</h4>
+            <h2>Space capsule</h2>
+            <p>A space capsule is an often-crewed spacecraft that uses a blunt-body reentry 
+              capsule to reenter the Earth's atmosphere without wings. Our capsule is where 
+              you'll spend your time during the flight. It includes a space gym, cinema, 
+              and plenty of other activities to keep you entertained.</p>
+            </div>
+          </article>
+          <picture>
+            <source media="(min-width: 800px)" srcset="assets/technology/image-space-capsule-portrait.jpg">
+            <source media="(max-width: 800px)" srcset="assets/technology/image-space-capsule-landscape.jpg">
+            <img src="assets/technology/image-space-capsule-landscape.jpg" alt="">
+          </picture>
+        </section>
+        <!-- ======== -->
+        <section id="port" class="main">
+          <article class="main__article">
+            <ul class="dest-link circle-link">
+              <li class="dest__link__elem circle"><button data-id="vehicle">1</button></li>
+              <li class="dest__link__elem circle"><button data-id="capsule">2</button></li>
+              <li class="dest__link__elem circle"><button data-id="port">3</button></li>
+            </ul>
+            <div class="main__article-div">
+              <h4>The terminology</h4>
+            <h2>Spaceport</h2>
+            <p> A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, 
+              by analogy to the seaport for ships or airport for aircraft. Based in the 
+              famous Cape Canaveral, our spaceport is ideally situated to take advantage 
+              of the Earth’s rotation for launch.</p>
+            </div>
+          </article>
+          <picture>
+            <source media="(min-width: 800px)" srcset="assets/technology/image-spaceport-portrait.jpg">
+            <source media="(max-width: 800px)" srcset="assets/technology/image-spaceport-landscape.jpg">
+            <img src="assets/technology/image-spaceport-landscape.jpg" alt="">
+          </picture>
+        </section>
+        <!-- ======== -->
       </section> 
     </section>
   </header>

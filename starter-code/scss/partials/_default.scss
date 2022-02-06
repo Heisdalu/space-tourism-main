@@ -94,7 +94,7 @@ button{
             content: "";
             position: absolute;
             width: 70%;
-            border: 1px solid hsla(0, 0%, 100%, 0.2);
+            border: 1px solid hsla(0, 0%, 100%, 0.4);
             top: 50%;
             left: 10%;
         }
@@ -103,13 +103,31 @@ button{
 .hd__nav__ul{
     margin-left: auto;
     @include flex-align($flex-dir: row);
-    background-color: rgba(122, 121, 121, 0.295);
+    background-color: hsla(0, 0%, 0%, 0.9);
     padding: 1em;
-    backdrop-filter: blur(10px);
+    @support (backdrop-filter: blur(10px)){
+        backdrop-filter: blur(10px);
+        background-color: rgba(122, 121, 121, .9);
+    }
     gap: .8em;
+    position: relative;
     
     > * ~ *{
         margin-left: .8em;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(600px);
+    }
+    @supports (backdrop-filter: blur(10px)){
+        backdrop-filter: blur(10px);
+        background-color: rgba(122, 121, 121, .9);
     }
     @media only screen and (max-width: 800px){
         position: absolute;
@@ -123,6 +141,7 @@ button{
         color: $base-color;
         font-size: 1.2em;
         font-weight: 600;
+        color: white;
 
         
         li{
